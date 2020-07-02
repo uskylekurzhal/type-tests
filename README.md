@@ -23,4 +23,18 @@ docker exec -ti type-test bash;
 # python3.7 type_test.py;
 ```
 
-There is a line in the code that you can also edit in order to see how the type checker handles mismatching types.
+There is a line in the code that you can also edit in order to see how the type checker handles mismatching types.  Here's an example of what this would look like:
+
+```
+# a success case
+
+root@70262ad34b96:/app# mypy --py2 type_test.py
+Success: no issues found in 1 source file
+
+
+# a failure case
+
+root@70262ad34b96:/app# mypy --py2 type_test.py
+type_test.py:37: error: Argument "id" to "Person" has incompatible type "str"; expected "UUIDString"
+Found 1 error in 1 file (checked 1 source file)
+```
