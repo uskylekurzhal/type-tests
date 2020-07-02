@@ -12,7 +12,7 @@ When performing type checking with mypy on Python 2 code, you must run `mypy --p
 To add types in Python 2, you simply add comments with the appropriate types (see the example or the [mypy website](https://mypy.readthedocs.io/en/stable/python2.html) for syntax).  These type comments work for both Python 3 *and* Python 2.
 
 ## How To Run This Code
-By running the below example, you can see how mypy 
+By running the below example, you can see how mypy works on code that is valid for both Python 2 and 3.
 
 ```
 docker-compose up;
@@ -20,6 +20,7 @@ docker exec -ti type-test bash;
 
 # mypy --py2 type_test.py;
 # python2.7 type_test.py;
+# python3.7 type_test.py;
 ```
 
 There is a line in the code that you can also edit in order to see how the type checker handles mismatching types.
