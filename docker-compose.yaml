@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  type-test:
+    container_name: type-test
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/app:cached
+    command:
+      - /bin/sh
+      - "-c"
+      - "while true; do sleep 1; done"
